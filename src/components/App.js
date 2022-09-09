@@ -1,14 +1,15 @@
 import React from "react";
 import BeerControl from "./BeerControl";
 import Header from "./Header";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <div className="container">
+      <Container>
         <BeerControl />
-      </div>
+      </Container>
     </React.Fragment>
   );
 }
