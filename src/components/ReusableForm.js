@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "react-bootstrap/Button";
 
 function ReusableForm(props) {
   return (
@@ -7,13 +8,17 @@ function ReusableForm(props) {
       <form onSubmit={props.formSubmissionHandler}>
         <input
           type="text"
-          name="name" />
+          name="name"
+          placeholder="Drink Name" />
         <input
           type="text"
-          name="type" />
+          name="type"
+          placeholder="Drink Type" />
         <input
           type="number"
-          name="quantity" />
+          name="quantity"
+          placeholder="Number of Walls" />
+        <Button type="submit">{ props.buttonText }</Button>
       </form>
     </React.Fragment>
   );

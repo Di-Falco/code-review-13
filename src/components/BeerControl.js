@@ -16,7 +16,7 @@ class BeerControl extends React.Component {
   }
 
   handleAddingNewBeerToList = (newBeer) => {
-    const newMainBeerList = this.state.mainBirdList.concat(newBeer);
+    const newMainBeerList = this.state.mainBeerList.concat(newBeer);
     this.setState({mainBeerList: newMainBeerList,
                   formVisibleOnPage: false});
   }
@@ -41,15 +41,15 @@ class BeerControl extends React.Component {
     if (this.state.editing) {
       currentlyVisibleState = <EditBeerForm beer = {this.state.selectedBeer}
         onEditBeer = {this.handleEditingBeerInList} />;
-      buttonText = "Return to Beer List";
+      buttonText = "Return to Drink List";
     } else if (this.state.selectedBeer != null) {
       currentlyVisibleState = <BeerDetail beer = {this.state.selectedBeer}
         onClickingDelete = {this.handleDeletingBeer}
         onClickingEdit = {this.handleEditClick} />;
-        buttonText = "Return to Beer List";
+        buttonText = "Return to Drink List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewBeerForm onNewBeerCreation={this.handleAddingNewBeerToList} />;
-      buttonText = "Return to Ticket List";
+      buttonText = "Submit Drink";
     } else {
       currentlyVisibleState = <BeerList beerList={this.state.mainBeerList}
       onBeerSelection = {this.handleChangingSelectedBeer}
