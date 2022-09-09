@@ -9,10 +9,10 @@ function BeerForm(props) {
   function handleBeerFormSubmission(event) {
     event.preventDefault();
     props.onNewBeerCreation({
-      Name: event.target.name.value,
-      Type: event.target.type.value,
-      Walls: event.target.quantity.value,
-      Bottles: event.target.quantity.value * 99
+      name: event.target.name.value,
+      yype: event.target.type.value,
+      walls: event.target.quantity.value,
+      bottles: event.target.quantity.value * 99
     });
   }
 
