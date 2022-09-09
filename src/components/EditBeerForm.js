@@ -3,7 +3,6 @@ import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 
 function EditBeerForm(props) {
-  const { beer } = props;
 
   function handleEditBeerFormSubmission(event) {
     event.preventDefault();

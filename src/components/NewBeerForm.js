@@ -1,9 +1,8 @@
 import React from "react";
 import { v4 } from "uuid";
 import PropTypes from "prop-types";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import ReusableForm from "./ReusableForm";
+import Button from "react-bootstrap/Button";
 
 function NewBeerForm(props) {
 
@@ -23,11 +22,12 @@ function NewBeerForm(props) {
       <ReusableForm
         formSubmissionHandler={handleNewBeerFormSubmission}
         buttonText="Add Drink" />
+      <Button>{props.buttonText}</Button>
     </React.Fragment>
   );
 }
 
-BeerForm.propTypes = {
+NewBeerForm.propTypes = {
   onNewBeerCreation: PropTypes.func
 }
 

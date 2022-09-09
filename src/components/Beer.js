@@ -11,7 +11,7 @@ function Beer(props) {
       <Button>{props.name}</Button>
       <Dropdown.Toggle split id="dropdown-split-basic" />
       <Dropdown.Menu>
-        <Dropdown.Item>Edit Drink</Dropdown.Item>
+        <Dropdown.Item onClick={ props.onClickingDelete }>Edit Drink</Dropdown.Item>
         <Dropdown.Item>Delete Drink</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

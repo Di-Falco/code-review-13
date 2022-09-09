@@ -1,6 +1,8 @@
 import React from "react";
-import BeerForm from "./NewBeerForm";
+import NewBeerForm from "./NewBeerForm";
+import EditBeerForm from "./EditBeerForm";
 import BeerList from "./BeerList";
+import BeerDetail from "./BeerDetail";
 import Button from "react-bootstrap/Button";
 
 class BeerControl extends React.Component {
@@ -20,22 +22,44 @@ class BeerControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectedBeer != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedBeer: null,
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
   }
 
   render() {
     let currentlyVisibleState = null;
-    if(this.state.formVisibleOnPage) {
-      currentlyVisibleState = <BeerForm onNewBeerCreation={this.handleAddingNewBeerToList} />
+    let buttonText = null;
+    if (this.state.editing) {
+      currentlyVisibleState = <EditBeerForm beer = {this.state.selectedBeer}
+        onEditBeer = {this.handleEditingBeerInList} />;
+      buttonText = "Return to Beer List";
+    } else if (this.state.selectedBeer != null) {
+      currentlyVisibleState = <BeerDetail beer = {this.state.selectedBeer}
+        onClickingDelete = {this.handleDeletingBeer}
+        onClickingEdit = {this.handleEditClick} />;
+        buttonText = "Return to Beer List";
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewBeerForm onNewBeerCreation={this.handleAddingNewBeerToList} />;
+      buttonText = "Return to Ticket List";
     } else {
-      currentlyVisibleState = <BeerList beerList={this.state.mainBeerList} />
+      currentlyVisibleState = <BeerList beerList={this.state.mainBeerList}
+      onBeerSelection = {this.handleChangingSelectedBeer}
+      onClickingDelete = {this.handleDeletingBeer} />;
+      buttonText = "Add Drink";
     }
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <Button onClick={this.handleClick}>Add New Drink to Inventory</Button>
+        <Button onClick={this.handleClick}>{buttonText}</Button>
       </React.Fragment>
     );
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import Beer from "./Beer";
 import PropTypes from "prop-types";
+import Button from "react-bootstrap/Button";
 
 function BeerList(props) {
   return (
@@ -10,8 +11,10 @@ function BeerList(props) {
         <Beer name={Beer.Name}
               type={beer.Type}
               quantity={beer.Quantity}
-              bottles={beer.Quantity * 99} />
+              bottles={beer.Quantity * 99} 
+              onClickingDelete={props.onClickingDelete} />
         )}
+        <Button>{props.buttonText}</Button>
     </React.Fragment>
   );
 }
