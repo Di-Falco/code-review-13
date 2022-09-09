@@ -1,4 +1,7 @@
 import React from "react";
+import BeerForm from "./BeerForm";
+import BeerList from "./BeerList";
+import Button from "react-bootstrap/Button";
 
 class BeerControl extends React.Component {
 
@@ -32,6 +35,7 @@ class BeerControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
+        <Button onClick={this.handleClick}>Add New Drink to Inventory</Button>
       </React.Fragment>
     );
   }

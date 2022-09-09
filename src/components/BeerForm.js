@@ -10,26 +10,28 @@ function BeerForm(props) {
     event.preventDefault();
     props.onNewBeerCreation({
       name: event.target.name.value,
-      yype: event.target.type.value,
+      type: event.target.type.value,
       walls: event.target.quantity.value,
-      bottles: event.target.quantity.value * 99
+      bottles: event.target.quantity.value * 99,
+      id: v4()
     });
   }
 
   return (
     <Form onSubmit={handleBeerFormSubmission}>
-      <Form.group controlId="name">
+      <Form.Group className="mb-3" controlId="name">
         <Form.Label>Drink Name</Form.Label>
         <Form.Control type="text" />
-      </Form.group>
-      <Form.Group>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="type">
         <Form.Label>Drink Type</Form.Label>
         <Form.Control type="text" />
       </Form.Group>
-      <Form.Group>
+      <Form.Group className="mb-3" controlId="quantity">
         <Form.Label>Quantity</Form.Label>
         <Form.Control type="number" />
       </Form.Group>
+      <Button type="submit">Submit Drink</Button>
     </Form>
   );
 }
