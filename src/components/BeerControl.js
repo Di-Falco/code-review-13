@@ -1,5 +1,5 @@
 import React from "react";
-import BeerForm from "./BeerForm";
+import BeerForm from "./NewBeerForm";
 import BeerList from "./BeerList";
 import Button from "react-bootstrap/Button";
 
