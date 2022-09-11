@@ -9,6 +9,7 @@ function BeerList(props) {
       {props.beerList.map((beer) =>
         <Beer 
           whenBeerClicked = {props.onBeerSelection}
+          onClickingDelete = {props.onClickingDelete}
           name={beer.name}
           type={beer.type}
           bottles={beer.bottles} 
