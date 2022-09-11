@@ -23,8 +23,7 @@ class BeerControl extends React.Component {
       .concat(beerToEdit);
     this.setState({
       mainBeerList: editedMainBeerList,
-      editing: false,
-      selectedBeer: null
+      editing: true
     });
   }
 
@@ -52,11 +51,15 @@ class BeerControl extends React.Component {
   }
 
   handleClick = () => {
-    if (this.state.selectedBeer != null) {
+    if (this.state.editing) {
+      this.setState({
+        editing: false,
+        selectedBeer: null
+      });
+    } else if (this.state.selectedBeer != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedBeer: null,
-        editing: false
+        selectedBeer: null
       });
     } else {
       this.setState(prevState => ({
@@ -66,17 +69,15 @@ class BeerControl extends React.Component {
   }
 
   render() {
-    console.log(this.state.mainBeerList);
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.editing) {
-      currentlyVisibleState = <EditBeerForm beer = {this.state.selectedBeer}
-        onEditBeer = {this.handleEditingBeerInList} />;
+      currentlyVisibleState = <EditBeerForm beer = {this.state.selectedBeer} />;
       buttonText = "Return to Drink List";
     } else if (this.state.selectedBeer != null) {
       currentlyVisibleState = <BeerDetail beer = {this.state.selectedBeer}
         onClickingDelete = {this.handleDeletingBeer}
-        onClickingEdit = {this.handleEditClick} />;
+        onEditBeer = {this.handleEditingBeerInList} />;
         buttonText = "Return to Drink List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewBeerForm onNewBeerCreation={this.handleAddingNewBeerToList} />;

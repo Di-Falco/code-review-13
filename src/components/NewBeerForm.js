@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 } from "uuid";
 import PropTypes from "prop-types";
-import ReusableForm from "./ReusableForm";
+import Button from "react-bootstrap/Button";
 
 function NewBeerForm(props) {
 
@@ -17,10 +17,22 @@ function NewBeerForm(props) {
 
   return (
     <React.Fragment>
-      <ReusableForm
-        formSubmissionHandler={handleNewBeerFormSubmission}
-        buttonText="Add Drink" />
-    </React.Fragment>
+    <form onSubmit={handleNewBeerFormSubmission}>
+      <input
+        type="text"
+        name="name"
+        placeholder="Drink Name" />
+      <input
+        type="text"
+        name="type"
+        placeholder="Drink Type" />
+      <input
+        type="text"
+        name="quantity"
+        placeholder="How many bottles?" />
+      <Button type="submit" variant="info">Add Drink</Button>
+    </form>
+  </React.Fragment>
   );
 }
 

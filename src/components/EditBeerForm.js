@@ -1,30 +1,18 @@
 import React from "react";
-import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 
 function EditBeerForm(props) {
-
-  function handleEditBeerFormSubmission(event) {
-    event.preventDefault();
-    props.onEditBeer({
-      name: event.target.name.value, 
-      type: event.target.type.value, 
-      bottles: event.target.quantity.value
-    });
-  }
+  const { beer } = props;
 
   return (
     <React.Fragment>
-      <ReusableForm
-        formSubmissionHandler={handleEditBeerFormSubmission}
-        buttonText="Update Drink" />
+      <h1>{beer.bottles - 1} bottles of {beer.type} on the wall</h1>
     </React.Fragment>
   );
 }
 
 EditBeerForm.propTypes = {
-  beer: PropTypes.object,
-  onEditBeer: PropTypes.func
+  beer: PropTypes.object
 }
 
 export default EditBeerForm;
