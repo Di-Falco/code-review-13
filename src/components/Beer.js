@@ -11,7 +11,6 @@ function Beer(props) {
       <Button onClick={() => props.whenBeerClicked(props.id)} variant="info">{props.name}</Button>
       <Dropdown.Toggle split variant="dark" id="dropdown-split-basic" />
       <Dropdown.Menu>
-        <Dropdown.Item>Edit Drink</Dropdown.Item>
         <Dropdown.Item>Delete Drink</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

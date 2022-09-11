@@ -2,6 +2,7 @@ import React from "react";
 import { v4 } from "uuid";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
+import { Form } from "react-bootstrap";
 
 function NewBeerForm(props) {
 
@@ -17,21 +18,23 @@ function NewBeerForm(props) {
 
   return (
     <React.Fragment>
-    <form onSubmit={handleNewBeerFormSubmission}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Drink Name" />
-      <input
-        type="text"
-        name="type"
-        placeholder="Drink Type" />
-      <input
-        type="text"
-        name="quantity"
-        placeholder="How many bottles?" />
+    <Form onSubmit={handleNewBeerFormSubmission}>
+      <Form.Group>
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="text" id="name" />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Type</Form.Label>
+        <Form.Control type="text" id="type" />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Number of Bottles</Form.Label>
+        <Form.Control type="number" id="quantity"></Form.Control>
+      </Form.Group>
+      <br />
       <Button type="submit" variant="info">Add Drink</Button>
-    </form>
+    </Form>
+    <br />
   </React.Fragment>
   );
 }

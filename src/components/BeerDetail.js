@@ -8,7 +8,7 @@ function BeerDetail(props) {
 
   function handleEditBeer(event){
     event.preventDefault();
-    props.onEditBeer({name: beer.name, type: beer.type, bottles: beer.bottles-1, id: beer.id})
+    props.onEditBeer({name: beer.name, type: beer.type, bottles: beer.bottles-1, id: beer.id});
   }
 
   return (

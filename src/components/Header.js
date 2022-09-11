@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <h1>HowManyBottlesOfBeerOnTheWall.com</h1>
+    <h1>&emsp;HowManyBottlesOfBeerOnTheWall.com&emsp;</h1>
   );
 }
 
