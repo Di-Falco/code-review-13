@@ -90,7 +90,7 @@ class BeerControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <Button onClick={this.handleClick}>{buttonText}</Button>
+        <Button onClick={this.handleClick} variant="info">{buttonText}</Button>
       </React.Fragment>
     );
   }

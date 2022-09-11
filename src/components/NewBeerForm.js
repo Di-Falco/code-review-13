@@ -10,7 +10,7 @@ function NewBeerForm(props) {
     props.onNewBeerCreation({
       name: event.target.name.value,
       type: event.target.type.value,
-      walls: event.target.quantity.value,
+      walls: Number(event.target.quantity.value),
       id: v4()
     });
   }

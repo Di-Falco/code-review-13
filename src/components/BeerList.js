@@ -8,6 +8,7 @@ function BeerList(props) {
       <hr />
       {props.beerList.map((beer) =>
         <Beer 
+          whenBeerClicked = {props.onBeerSelection}
           name={beer.name}
           type={beer.type}
           walls={beer.walls}
