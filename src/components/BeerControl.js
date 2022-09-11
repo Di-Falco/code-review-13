@@ -66,6 +66,7 @@ class BeerControl extends React.Component {
   }
 
   render() {
+    console.log(this.state.mainBeerList);
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.editing) {
@@ -82,8 +83,8 @@ class BeerControl extends React.Component {
       buttonText = "Return to Drink List";
     } else {
       currentlyVisibleState = <BeerList beerList={this.state.mainBeerList}
-      onBeerSelection = {this.handleChangingSelectedBeer}
-      onClickingDelete = {this.handleDeletingBeer} />;
+        onBeerSelection = {this.handleChangingSelectedBeer}
+        onClickingDelete = {this.handleDeletingBeer} />;
       buttonText = "Add Drink";
     }
     return (
