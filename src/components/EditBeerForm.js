@@ -9,8 +9,7 @@ function EditBeerForm(props) {
     props.onEditBeer({
       name: event.target.name.value, 
       type: event.target.type.value, 
-      walls: event.target.quantity.value, 
-      bottles: event.target.quantity.value * 99
+      bottles: event.target.quantity.value
     });
   }
 

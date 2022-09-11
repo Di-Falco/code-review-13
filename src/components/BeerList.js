@@ -11,8 +11,7 @@ function BeerList(props) {
           whenBeerClicked = {props.onBeerSelection}
           name={beer.name}
           type={beer.type}
-          walls={beer.walls}
-          bottles={Number(beer.walls) * 99} 
+          bottles={beer.bottles} 
           id={beer.id}
           key={beer.id} />
         )}

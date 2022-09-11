@@ -28,7 +28,6 @@ function Beer(props) {
 Beer.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
-  walls: PropTypes.number,
   bottles: PropTypes.number
 }
 
