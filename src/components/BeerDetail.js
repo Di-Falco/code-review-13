@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import Form from"react-bootstrap/Form"
 
 function BeerDetail(props) {
   const { beer } = props;
+  const [counter, setCounter] = useState(beer.bottles)
 
   function handleEditBeer(event){
     event.preventDefault();
-    props.onEditBeer({name: beer.name, type: beer.type, bottles: beer.bottles-1, id: beer.id});
+    props.onEditBeer({name: beer.name, type: beer.type, bottles: counter, id: beer.id});
   }
 
   return (
     <React.Fragment>
       <div  className="mb-3">
         <h2>{beer.name}</h2>
-        <h5>{beer.bottles} bottles of {beer.type} on the wall</h5>
+        <h5>{counter} bottles of {beer.type} on the wall</h5>
         <Form onSubmit={ handleEditBeer }>
-          <Button type="submit" variant="info">Take one down, pass it around</Button>
+          <Button onClick={() => setCounter(counter-1)} className="mb-3" variant="info">Take one down</Button>
+          <br />
+          <Button type="submit" variant="info">Pass it around</Button>
         </Form>
         <br />
       </div>

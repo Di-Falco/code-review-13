@@ -23,10 +23,7 @@ class BeerControl extends React.Component {
     this.setState({
       mainBeerList: editedMainBeerList
     });
-  }
-
-  handleEditClick = () => {
-    this.setState({editing:true});
+    this.forceUpdate();
   }
 
   handleDeletingBeer = (id) => {
