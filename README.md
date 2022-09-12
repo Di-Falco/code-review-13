@@ -1,6 +1,31 @@
-# Getting Started with Create React App
+### Technologies Used
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* JavaScript
+* Node.js
+* React
+* Bootstrap
+
+![image](./blueprint.png)
+
+## Description
+
+This site lets the user finally track how many bottles of beer are on the wall.
+
+Upon loading the page, there is a button for adding a new beverage. This provides a form with fields for name, type and quantity. Name and type can be anything, so the user can input anything, beer or beverage or otherwise.
+
+Each submitted drink is displayed as a button after the form is submitted. Clicking the button opens the details page which displays the number of bottles of beer on the wall. Clicking the dropdown arrow on the right of the button allows the user to delete the specified drink.
+
+On the details page, the "Take one down" button decreases the number of beers on the wall. This can be done indefinitely, even into the negatives. Although this may seem like a bug, it's meant to account for the possibility that the user is jynxed, and owes someone a Coke. This would potentially leave them with fewer than 0 drinks.
+
+To commit the number of beers on the wall, the user has to click the "Pass it around" button, which will pass the beers around and subsequently reduce the number of beers on the wall.
+
+## Setup/Installation Requirements
+
+* Clone this repository from https://github.com/Di-Falco/code-review-13.git to your desktop
+* Navigate to the top level of the directory
+* In your terminal console `$cd to code-review-13`
+* `$npm install`
+* `$npm run start`
 
 ## Available Scripts
 
@@ -29,42 +54,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Known Bugs
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* None
